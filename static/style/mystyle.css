@@ -1,0 +1,50 @@
+body {
+	background-color: LightGray;
+	background-image: url(../images/ampersand-red.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 35em 35em;
+	background-attachment: fixed;
+	background-opacity: 0.2;
+    margin: 20px;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+div.headerbox {
+
+}
+
+div.navibar {
+    text-align: left;
+}
+
+div.col {
+    border: 5px solid white;
+    border-radius: 10px;
+    background: White;
+    opacity: 0.7;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+}
+
+div.col-1 {
+    background-color: none;
+    opacity: 0;
+}
+
+spellblock.title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+spellblock.subtitle {
+    font-style: italic;
+    font-size: 1em;
+}
+
+spellblock.list {
+    font-size: 1em;
+}

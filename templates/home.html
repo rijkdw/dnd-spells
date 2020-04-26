@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Spell Database</h1>
+
+    <form action="" method="post" novalidate>
+
+        <p>
+            {{ form.query_area.label }}<br>
+            {{ form.query_area(size=32) }}
+        </p>
+        <p>
+<!--            {{ form.submit.label }}<br>-->
+            {{ form.submit() }}
+        </p>
+
+    </form>
+
+    {% if spells %}
+
+        <h2>{{ spells|length }} results</h2>
+
+        <div class="container">
+
+            <!-- SPLIT INTO ROWS OF THREE -->
+            {% for spell_row in spells|batch(3) %}
+            <div class="row">
+
+                {% for spell in spell_row %}
+                <div class="col">
+
+                        <spellblock class="title">{{ spell.name }}</spellblock> <br>
+                        <spellblock class="subtitle">{{ gen_sub_func(spell) }}</spellblock> <br><br>
+
+                        <!-- CASTING TIME -->
+                        <spellblock class="list">
+                            <i class="fas fa-hourglass-half" style="display: inline-block; width: 1em; text-align: center;"></i> <!--<i class="fas fa-hourglass-start"></i>-->
+                            <b>Casting Time:</b>  {{ spell.castingtime }}
+                        </spellblock> <br>
+
+                        <!-- COMPONENTS -->
+                        <spellblock class="list">
+                            <i class="fas fa-mortar-pestle" style="display: inline-block; width: 1em; text-align: center;"></i>
+                            <b>Components:</b>  {{ gen_comp_func(spell) }}
+                        </spellblock> <br>
+
+                        <!-- DURATION -->
+                        <spellblock class="list">
+                            <i class="fas fa-hourglass-end" style="display: inline-block; width: 1em; text-align: center;"></i>
+                            <b>Duration:</b>  {{ gen_dur_func(spell) }}
+                        </spellblock> <br>
+
+                        <!-- SPELL LISTS -->
+                        <spellblock class="list">
+                            <i class="fas fa-hat-wizard" style="display: inline-block; width: 1em; text-align: center;"></i>
+                            <b>Spell lists:</b>  {{ spell.spelllists }}
+                        </spellblock> <br>
+
+                        <!-- SOURCE -->
+                        <spellblock class="list">
+                            <i class="fas fa-book" style="display: inline-block; width: 1em; text-align: center;"></i>
+                            <b>Source book:</b>  {{ spell.source|upper }}
+                        </spellblock>
+
+                </div>
+                {% endfor %}
+
+                <!-- FILL UP REMAINING COLUMNS -->
+                {% for i in range(3-spell_row|length) %}
+                <div class="col" style="background-color: none; opacity: 0;">a</div>
+                {% endfor %}
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <h2>0 results</h2>
+        <p>Try refining your search.</p>
+
+    {% endif %}
+
+{% endblock %}
