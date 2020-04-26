@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request
 import flask_wtf, wtforms
+import json
 import pprint
 from config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+spells_json_master = json.loads('\n'.join(open('files/spells.json', 'r+', encoding='utf-8').readlines())[1:])
 
 
 class QueryForm(flask_wtf.FlaskForm):
@@ -35,8 +38,12 @@ def render_about():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
-    # connection = create_connection('C:\\Users\\Rijk\\PycharmProjects\\DatabasePlaying\\sm_app.sqlite')
-    # query = 'SELECT * FROM spells'
-    # spells = query_to_dict(execute_read_query(connection, query))
-    # pprint.pprint(spells)
+    print(len(spells_json_master))
+
+    absorb_elements = [spell for spell in spells_json_master if spell['name'] == 'Absorb Elements'][0]
+    pprint.pprint(absorb_elements)
+
+    print('entries:  ' + absorb_elements['entries'][0])
+    print('higher:  ' + absorb_elements['entriesHigherLevel'][0]['entries'][0])
+
+    # app.run(debug=True, port=5000)
