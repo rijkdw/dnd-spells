@@ -31,36 +31,36 @@
                 <div class="col">
 
                         <spellblock class="title">{{ spell.name }}</spellblock> <br>
-                        <spellblock class="subtitle">{{ gen_sub_func(spell) }}</spellblock> <br><br>
+                        <spellblock class="subtitle">{{ spell.subtitle }}</spellblock> <br><br>
 
                         <!-- CASTING TIME -->
                         <spellblock class="list">
                             <i class="fas fa-hourglass-half" style="display: inline-block; width: 1em; text-align: center;"></i> <!--<i class="fas fa-hourglass-start"></i>-->
-                            <b>Casting Time:</b>  {{ spell.castingtime }}
+                            <b>Casting Time:</b>  {{ spell.casting_time }}
                         </spellblock> <br>
 
                         <!-- COMPONENTS -->
                         <spellblock class="list">
                             <i class="fas fa-mortar-pestle" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Components:</b>  {{ gen_comp_func(spell) }}
+                            <b>Components:</b>  {{ spell.components }}
                         </spellblock> <br>
 
                         <!-- DURATION -->
                         <spellblock class="list">
                             <i class="fas fa-hourglass-end" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Duration:</b>  {{ gen_dur_func(spell) }}
+                            <b>Duration:</b>  {{ spell.duration }}
                         </spellblock> <br>
 
                         <!-- SPELL LISTS -->
                         <spellblock class="list">
                             <i class="fas fa-hat-wizard" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Spell lists:</b>  {{ spell.spelllists }}
+                            <b>Spell lists:</b>  {{ spell.spell_lists }}
                         </spellblock> <br>
 
                         <!-- SOURCE -->
                         <spellblock class="list">
                             <i class="fas fa-book" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Source book:</b>  {{ spell.source|upper }}
+                            <b>Source book:</b>  {{ spell.source }}
                         </spellblock>
 
                 </div>
