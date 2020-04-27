@@ -23,10 +23,10 @@ def render_home():
         spells = [{
             'name': 'Eldritch Blast',
             'subtitle': 'Evocation cantrip',
-            'casting_time': '1 action',
+            'time': '1 action',
             'duration': 'Instantaneous',
             'components': 'VS',
-            'spell_lists': 'Warlock',
+            'classes': 'Warlock',
             'source': 'PHB'
         }]
         return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
