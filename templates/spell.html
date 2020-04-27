@@ -2,24 +2,26 @@
 
 {% block content %}
 
-{{ spell.name }} <br>
+<div class="spelldesc">
 
-{{ spell.subtitle }} <br>
+    <h2>{{ spell.name }}</h2>
 
-{{ spell.time }} <br>
+    <i>{{ spell.subtitle }}</i> <br><br>
 
-{{ spell.range }} <br>
+    <ul>
+        <li>{{ spell.time }}</li>
+        <li>{{ spell.range }}</li>
+        <li>{{ spell.components }}</li>
+        <li>{{ spell.duration }}</li>
+        <li>{{ spell.classes }}</li>
+    </ul>
 
-{{ spell.components }} <br>
+    {% for line in spell.description %}
 
-{{ spell.duration }} <br>
+        {{ line|safe }} <br>
 
-{{ spell.classes }} <br>
+    {% endfor %}
 
-{% for line in spell.description %}
-
-    {{ line|safe }} <br>
-
-{% endfor %}
+</div>
 
 {% endblock %}

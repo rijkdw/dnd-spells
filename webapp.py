@@ -20,17 +20,9 @@ class QueryForm(flask_wtf.FlaskForm):
 def render_home():
     form = QueryForm()
     if form.is_submitted():
-        spells = [{
-            'name': 'Eldritch Blast',
-            'subtitle': 'Evocation cantrip',
-            'time': '1 action',
-            'duration': 'Instantaneous',
-            'components': 'VS',
-            'classes': 'Warlock',
-            'source': 'PHB',
-            'description': ['spell yes']
-        }]
-        return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
+        pass
+    spells = [spell_json_to_jinja(s) for s in load_json_spells()]
+    return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
     return render_template('home.html', title='D&D Spells 5th Edition', form=form)
 
 

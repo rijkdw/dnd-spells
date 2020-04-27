@@ -3,6 +3,18 @@ import json
 import inflect
 
 
+dummy_spells = [{
+            'name': 'Eldritch Blast',
+            'subtitle': 'Evocation cantrip',
+            'time': '1 action',
+            'duration': 'Instantaneous',
+            'components': 'VS',
+            'classes': 'Warlock',
+            'source': 'PHB',
+            'description': ['spell yes']
+        }]
+
+
 school_dict = {
     'A': 'Abjuration', 'C': 'Conjuration', 'D': 'Divination', 'V': 'Evocation',
     'E': 'Enchantment', 'I': 'Illusion', 'N': 'Necromancy', 'T': 'Transmutation'
