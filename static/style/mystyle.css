@@ -12,6 +12,10 @@ body {
     text-align: center;
 }
 
+a.spellname {
+    text-decoration: none;
+}
+
 div.navibar {
     text-align: left;
 }

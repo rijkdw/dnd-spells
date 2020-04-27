@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{ spell.name }} <br>
+
+{{ spell.subtitle }} <br>
+
+{{ spell.time }} <br>
+
+{{ spell.range }} <br>
+
+{{ spell.components }} <br>
+
+{{ spell.duration }} <br>
+
+{{ spell.classes }} <br>
+
+{% for line in spell.description %}
+
+    {{ line|safe }} <br>
+
+{% endfor %}
+
+{% endblock %}

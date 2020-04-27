@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a6a6b5-d0ce-4a2c-96cd-e794f1e1f176" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/spell.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/json_inspector.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_inspector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/mystyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.py" afterDir="false" />
     </list>
@@ -16,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -33,11 +36,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.json_inspector">
+  <component name="RunManager" selected="Python.webapp">
     <configuration name="json_inspector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="dnd-spells" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,8 +86,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.json_inspector" />
         <item itemvalue="Python.webapp" />
+        <item itemvalue="Python.json_inspector" />
       </list>
     </recent_temporary>
   </component>
@@ -107,26 +111,42 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1588008873506">
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1588016240627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659095" />
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588008873506" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1588008873506">
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588016240627" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1588016240627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588008873506" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1588008873505">
+    <state width="1899" height="285" key="GridCell.Tab.0.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588016240627" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1588016240627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588008873505" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1588008873506">
+    <state width="1899" height="285" key="GridCell.Tab.0.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588016240627" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1588016240627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588008873506" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588016240627" />
+    <state width="1899" height="352" key="GridCell.Tab.1.bottom" timestamp="1588010974570">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588010974570" />
+    <state width="1899" height="352" key="GridCell.Tab.1.center" timestamp="1588010974570">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588010974570" />
+    <state width="1899" height="352" key="GridCell.Tab.1.left" timestamp="1588010974570">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588010974570" />
+    <state width="1899" height="352" key="GridCell.Tab.1.right" timestamp="1588010974570">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588010974570" />
     <state x="463" y="170" key="SettingsEditor" timestamp="1587923245216">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

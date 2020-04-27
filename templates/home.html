@@ -30,7 +30,8 @@
                 {% for spell in spell_row %}
                 <div class="col">
 
-                        <spellblock class="title">{{ spell.name }}</spellblock> <br>
+                        <spellblock class="title"><a href="{{ url_for('render_spell_page', spell_name=spell.name) }}" class="spellname">{{ spell.name }}</a></spellblock> <br>
+                        {# <spellblock class="title">{{ spell.name }}</spellblock> <br> #}
                         <spellblock class="subtitle">{{ spell.subtitle }}</spellblock> <br><br>
 
                         <!-- CASTING TIME -->
