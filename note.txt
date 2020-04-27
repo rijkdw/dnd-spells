@@ -1,0 +1,52 @@
+==========================================
+Spell card layout:
+==========================================
+<b>Title</b>
+<i>Subtitle</i>
+
+<b>Casting time:</b>  ???
+<b>Range:</b>  ???
+<b>Components:</b>  V, S, M (material components)
+<b>Duration:</b>  ???
+<b>Spell lists:</b>  ???
+
+
+==========================================
+On click of spell card:
+==========================================
+<b>Title</b>
+<i>Subtitle</i>
+
+<b>Casting time:</b>  ???
+<b>Range:</b>  ???
+<b>Components:</b>  V, S, M (material components)
+<b>Duration:</b>  ???
+<b>Spell lists:</b>  ???
+
+Spell description.
+<b>At higher levels.</b>  More description.
+
+
+
+
+===========================================
+spells.json:
+===========================================
+All spells have the following keys:
+- name
+- level
+- source
+- school
+- source
+- entries
+- time
+- range
+- components
+- duration
+- classes
+
+Some spells are missing the following keys:
+- page:
+    'Encode Thoughts':  missing key
+- damageInflict:
+    A lot of spells:  missing key

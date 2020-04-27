@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 import flask_wtf, wtforms
 import json
 import pprint
 from config import Config
+from json_inspector import *
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -38,12 +39,4 @@ def render_about():
 
 
 if __name__ == '__main__':
-    print(len(spells_json_master))
-
-    absorb_elements = [spell for spell in spells_json_master if spell['name'] == 'Absorb Elements'][0]
-    pprint.pprint(absorb_elements)
-
-    print('entries:  ' + absorb_elements['entries'][0])
-    print('higher:  ' + absorb_elements['entriesHigherLevel'][0]['entries'][0])
-    print('test for git')
-    # app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000)

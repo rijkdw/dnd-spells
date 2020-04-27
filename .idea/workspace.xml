@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a6a6b5-d0ce-4a2c-96cd-e794f1e1f176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Rijk.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json_inspector.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.py" afterDir="false" />
     </list>
@@ -10,6 +11,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,7 +37,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.json_inspector">
+    <configuration name="json_inspector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="dnd-spells" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json_inspector.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="webapp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="dnd-spells" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.json_inspector" />
         <item itemvalue="Python.webapp" />
       </list>
     </recent_temporary>
@@ -77,29 +107,33 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1587926659095">
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1587992867665">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659095" />
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587924745353" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1587926659094">
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587992867665" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1587992867665">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587924745352" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1587926659094">
+    <state width="1899" height="285" key="GridCell.Tab.0.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587992867665" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1587992867664">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587924745352" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1587926659094">
+    <state width="1899" height="285" key="GridCell.Tab.0.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587992867664" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1587992867665">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587924745352" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587992867665" />
     <state x="463" y="170" key="SettingsEditor" timestamp="1587923245216">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="463" y="170" key="SettingsEditor/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587923245216" />
+    <state x="1920" y="322" width="1382" height="825" key="dock-window-1" timestamp="1587991653043">
+      <screen x="1920" y="322" width="1366" height="738" />
+    </state>
+    <state x="1920" y="322" width="1382" height="825" key="dock-window-1/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1587991653043" />
   </component>
 </project>
