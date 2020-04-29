@@ -12,18 +12,16 @@ spells_json_master = json.loads('\n'.join(open('files/spells.json', 'r+', encodi
 
 
 class QueryForm(flask_wtf.FlaskForm):
-    query_area = wtforms.StringField('SELECT * FROM spells')
-    submit = wtforms.SubmitField('Perform query')
-
-    def get_text(self):
-        return self.query_area.data
+    name_field = wtforms.StringField('Name')
+    submit_button = wtforms.SubmitField('Search')
+    class_radio = wtforms.RadioField('Levels', choices=list(range(0,10)))
 
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():
     form = QueryForm()
     if form.is_submitted():
-        print(form.get_text())
+        pass
     spells = [spell_json_to_jinja(s) for s in load_json_spells()]
     return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
     return render_template('home.html', title='D&D Spells 5th Edition', form=form)
