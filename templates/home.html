@@ -10,11 +10,21 @@
             {{ form.name_field.label }}<br>
             {{ form.name_field(size=32) }}
         </p>
+
+        <p>
+            {{ form.level_checkbox.label }}<br>
+            {% for ch in form.level_checkbox %}
+                {{ ch }}&nbsp;{{ ch.label }}&nbsp;&nbsp;&nbsp;
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.boolean.label}}&nbsp;{{ form.boolean }}
+        </p>
+
         <p>
             {{ form.submit_button() }}
         </p>
-
-
 
     </form>
 
