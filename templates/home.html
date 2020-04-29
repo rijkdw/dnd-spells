@@ -30,39 +30,40 @@
                 {% for spell in spell_row %}
                 <div class="col">
 
-                        <spellblock class="title"><a href="{{ url_for('render_spell_page', spell_name=spell.name) }}" class="spellname">{{ spell.name }}</a></spellblock> <br>
-                        {# <spellblock class="title">{{ spell.name }}</spellblock> <br> #}
-                        <spellblock class="subtitle">{{ spell.subtitle }}</spellblock> <br><br>
+                    <!-- NAME, LEVEL, SCHOOL -->
+                    <spellblock class="title"><a href="{{ url_for('render_spell_page', spell_name=spell.name) }}" class="spellname">{{ spell.name }}</a></spellblock> <br>
+                    {# <spellblock class="title">{{ spell.name }}</spellblock> <br> #}
+                    <spellblock class="subtitle">{{ spell.subtitle }}</spellblock> <br><br>
 
-                        <!-- CASTING TIME -->
-                        <spellblock class="list">
-                            <i class="fas fa-hourglass-half" style="display: inline-block; width: 1em; text-align: center;"></i> <!--<i class="fas fa-hourglass-start"></i>-->
-                            <b>Casting Time:</b>  {{ spell.time }}
-                        </spellblock> <br>
+                    <!-- CASTING TIME -->
+                    <spellblock class="list">
+                        <ico class="fas fa-hourglass-half"></ico>&nbsp; <!--<i class="fas fa-hourglass-start"></i>-->
+                        <b>Casting Time:</b> {{ spell.time }}
+                    </spellblock> <br>
 
-                        <!-- COMPONENTS -->
-                        <spellblock class="list">
-                            <i class="fas fa-mortar-pestle" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Components:</b>  {{ spell.components }}
-                        </spellblock> <br>
+                    <!-- RANGE -->
+                    <spellblock class="list">
+                        <ico class="fas fa-drafting-compass"></ico>&nbsp; <!--<i class="fas fa-hourglass-start"></i>-->
+                        <b>Range:</b> {{ spell.range }}
+                    </spellblock> <br>
 
-                        <!-- DURATION -->
-                        <spellblock class="list">
-                            <i class="fas fa-hourglass-end" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Duration:</b>  {{ spell.duration }}
-                        </spellblock> <br>
+                    <!-- COMPONENTS -->
+                    <spellblock class="list">
+                        <ico class="fas fa-mortar-pestle" ></ico>&nbsp;
+                        <b>Components:</b> {{ spell.components }}
+                    </spellblock> <br>
 
-                        <!-- SPELL LISTS -->
-                        <spellblock class="list">
-                            <i class="fas fa-hat-wizard" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Spell lists:</b>  {{ spell.classes }}
-                        </spellblock> <br>
+                    <!-- DURATION -->
+                    <spellblock class="list">
+                        <ico class="fas fa-hourglass-end"></ico>&nbsp;
+                        <b>Duration:</b> {{ spell.duration }}
+                    </spellblock> <br>
 
-                        <!-- SOURCE -->
-                        <spellblock class="list">
-                            <i class="fas fa-book" style="display: inline-block; width: 1em; text-align: center;"></i>
-                            <b>Source book:</b>  {{ spell.source }}
-                        </spellblock>
+                    <!-- SPELL LISTS -->
+                    <spellblock class="list">
+                        <ico class="fas fa-hat-wizard"></ico>&nbsp;
+                        <b>Spell lists:</b> {{ spell.classes }}
+                    </spellblock> <br>
 
                 </div>
                 {% endfor %}

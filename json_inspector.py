@@ -1,6 +1,7 @@
 import pprint
 import json
 import inflect
+from utils import *
 
 
 dummy_spells = [{
@@ -86,7 +87,12 @@ def spell_json_to_jinja(json_spell):
             subclass_name = class_subclass_dict['subclass']['name']
             if '(UA)' not in subclass_name:
                 class_names.append(f'{class_name} ({subclass_name})')
-    classes = ', '.join(class_names)
+    classes = ', '.join(remove_duplicates(class_names))
+
+    source = json_spell['source']
+    if 'page' in list(json_spell.keys()):
+        page = json_spell['page']
+        source += f' (p{page})'
 
     # spell description (includes html)
     description = []
@@ -125,11 +131,12 @@ def spell_json_to_jinja(json_spell):
     jinja_spell = {
         'name': json_spell['name'],
         'subtitle': subtitle,
-        'time': time,
-        'range': s_range,
+        'time': time.capitalize(),
+        'range': s_range.capitalize(),
         'components': components,
-        'duration': duration,
+        'duration': duration.capitalize(),
         'classes': classes,
+        'source': source,
         'description': description
     }
 
@@ -141,7 +148,7 @@ if __name__ == '__main__':
 
     test_spell = [sp for sp in spells_list if sp['name'].lower() == 'animate objects'][0]
 
-    pprint.pprint(spell_json_to_jinja(test_spell))
+    # pprint.pprint(spell_json_to_jinja(test_spell))
 
     # for spell in spells_list:
     #     spell_json_to_jinja(spell)

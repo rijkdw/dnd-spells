@@ -9,17 +9,34 @@
     <i>{{ spell.subtitle }}</i> <br><br>
 
     <ul>
-        <li>{{ spell.time }}</li>
-        <li>{{ spell.range }}</li>
-        <li>{{ spell.components }}</li>
-        <li>{{ spell.duration }}</li>
-        <li>{{ spell.classes }}</li>
+        <li>
+            <ico class="fas fa-hourglass-half" ></ico>&nbsp;
+            <b>Casting Time:</b> {{ spell.time }}
+        </li>
+        <li>
+            <ico class="fas fa-drafting-compass"></ico>&nbsp;
+            <b>Range:</b> {{ spell.range }}
+        </li>
+        <li>
+            <ico class="fas fa-mortar-pestle"></ico>&nbsp;
+            <b>Components:</b> {{ spell.components }}
+        </li>
+        <li>
+            <ico class="fas fa-hourglass-end"></ico>&nbsp;
+            <b>Duration:</b> {{ spell.duration }}
+        </li>
+        <li>
+            <ico class="fas fa-hat-wizard"></ico>&nbsp;
+            <b>Spell lists:</b> {{ spell.classes }}
+        </li>
+        <li>
+            <ico class="fas fa-book"></ico>&nbsp;
+            <b>Source:</b> {{ spell.source }}
+        </li>
     </ul>
 
     {% for line in spell.description %}
-
         {{ line|safe }} <br>
-
     {% endfor %}
 
 </div>

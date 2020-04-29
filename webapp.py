@@ -15,12 +15,15 @@ class QueryForm(flask_wtf.FlaskForm):
     query_area = wtforms.StringField('SELECT * FROM spells')
     submit = wtforms.SubmitField('Perform query')
 
+    def get_text(self):
+        return self.query_area.data
+
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():
     form = QueryForm()
     if form.is_submitted():
-        pass
+        print(form.get_text())
     spells = [spell_json_to_jinja(s) for s in load_json_spells()]
     return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
     return render_template('home.html', title='D&D Spells 5th Edition', form=form)
