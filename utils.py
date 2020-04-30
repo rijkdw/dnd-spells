@@ -17,3 +17,13 @@ def remove_duplicates(list_arg):
         if item not in unique_list:
             unique_list.append(item)
     return unique_list
+
+
+def title_case(sentence):
+    non_upper_words = ['the', 'a', 'of']
+    new_words = [sentence.split(' ')[0].capitalize()]
+    if len(sentence.split(' ')) > 1:
+        for word in sentence.split(' ')[1:]:
+            if word not in non_upper_words:
+                new_words.append(word.capitalize())
+    return ' '.join(new_words)
