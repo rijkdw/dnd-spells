@@ -27,22 +27,30 @@ class QueryForm(flask_wtf.FlaskForm):
     school_choices = [(key, school_dict[key]) for key in list(school_dict.keys())]
     school_checkbox = wtforms.SelectMultipleField('School', choices=school_choices, option_widget=wtforms.widgets.CheckboxInput())
 
+    class_choices = [(c,c) for c in ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Warlock', 'Wizard']]
+    class_checkbox = wtforms.SelectMultipleField('Class', choices=class_choices, option_widget=wtforms.widgets.CheckboxInput())
+
     submit_button = wtforms.SubmitField('Search')
 
-    def get_query(self):
+    def get_spells_with_query(self):
+        spells = all_spells_json_to_jinja()
+
         levels = [int(x) for x in self.level_checkbox.data]
         schools = self.school_checkbox.data
-        return levels, schools
+        classes = self.class_checkbox.data
+        
+        print(levels, schools, classes)
+        return spells
 
 
 @app.route('/home', methods=['GET', 'POST'])
 def render_home():
     form = QueryForm()
     if form.is_submitted():
-        print(form.get_query())
-    spells = [spell_json_to_jinja(s) for s in load_json_spells()]
+        spells = form.get_spells_with_query()
+        return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
+    spells = all_spells_json_to_jinja()
     return render_template('home.html', title='D&D Spells 5th Edition', form=form, spells=spells)
-    return render_template('home.html', title='D&D Spells 5th Edition', form=form)
 
 
 @app.route('/spell:<string:spell_name>')

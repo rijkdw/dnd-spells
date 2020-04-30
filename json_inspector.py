@@ -79,8 +79,8 @@ def spell_json_to_jinja(json_spell):
         for class_subclass_dict in json_spell['classes']['fromSubclass']:
             class_name = class_subclass_dict['class']['name']
             subclass_name = class_subclass_dict['subclass']['name']
-            if '(UA)' not in subclass_name:
-                class_names.append(f'{class_name} ({subclass_name})')
+            # if '(UA)' not in subclass_name:
+            class_names.append(f'{class_name} ({subclass_name})')
     classes = ', '.join(remove_duplicates(class_names))
 
     source = json_spell['source']
@@ -121,10 +121,16 @@ def spell_json_to_jinja(json_spell):
                     list_string += f'\n<li>{item}</li>'
                 list_string += '\n</ul>'
                 description.append(list_string)
+    if 'entriesHigherLevel' in list(json_spell.keys()):
+        higher_level_entries = json_spell['entriesHigherLevel'][0]['entries']
+        description.append(f'<br><b><i>At higher levels.</i></b>')
+        for higher_level_entry in higher_level_entries:
+            description.append(higher_level_entry)
 
     jinja_spell = {
         'name': json_spell['name'],
         'subtitle': subtitle,
+        'level': level,
         'time': time.capitalize(),
         'range': s_range.capitalize(),
         'components': components,
@@ -137,17 +143,15 @@ def spell_json_to_jinja(json_spell):
     return jinja_spell
 
 
-if __name__ == '__main__':
+def all_spells_json_to_jinja():
+    return [spell_json_to_jinja(s) for s in load_json_spells()]
+
+
+def generate_clean_json():
     spells_list = [spell_json_to_jinja(s) for s in load_json_spells()]
+    with open('files/spells_clean.json', 'w+') as file:
+        file.write(json.dumps(spells_list, indent=4))
 
-    ranges = []
-    for spell in spells_list:
-        ranges.append(spell['range'])
-    ranges = remove_duplicates(ranges)
 
-    print(ranges)
-
-    # pprint.pprint(spell_json_to_jinja(test_spell))
-
-    # for spell in spells_list:
-    #     spell_json_to_jinja(spell)
+if __name__ == '__main__':
+    generate_clean_json()
