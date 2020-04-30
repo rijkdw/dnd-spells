@@ -16,12 +16,6 @@ dummy_spells = [{
         }]
 
 
-school_dict = {
-    'A': 'Abjuration', 'C': 'Conjuration', 'D': 'Divination', 'V': 'Evocation',
-    'E': 'Enchantment', 'I': 'Illusion', 'N': 'Necromancy', 'T': 'Transmutation'
-}
-
-
 def load_json_spells():
     return json.loads('\n'.join(open('files/spells.json', 'r+', encoding='utf-8').readlines())[1:])
 
@@ -144,9 +138,14 @@ def spell_json_to_jinja(json_spell):
 
 
 if __name__ == '__main__':
-    spells_list = load_json_spells()
+    spells_list = [spell_json_to_jinja(s) for s in load_json_spells()]
 
-    test_spell = [sp for sp in spells_list if sp['name'].lower() == 'animate objects'][0]
+    ranges = []
+    for spell in spells_list:
+        ranges.append(spell['range'])
+    ranges = remove_duplicates(ranges)
+
+    print(ranges)
 
     # pprint.pprint(spell_json_to_jinja(test_spell))
 

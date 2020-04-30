@@ -19,7 +19,10 @@
         </p>
 
         <p>
-            {{ form.boolean.label}}&nbsp;{{ form.boolean }}
+            {{ form.school_checkbox.label }}<br>
+            {% for ch in form.school_checkbox %}
+                {{ ch }}&nbsp;{{ ch.label }}&nbsp;&nbsp;&nbsp;
+            {% endfor %}
         </p>
 
         <p>
