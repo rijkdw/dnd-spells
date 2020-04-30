@@ -32,12 +32,17 @@ div.navibar {
 
 div.col {
     border: 5px solid white;
-    border-radius: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 7px;
     background: White;
-    opacity: 0.7;
+    opacity: 0.8;
     margin: 10px;
     padding: 10px;
     text-align: left;
+}
+
+div.col:hover {
+    opacity: 1.0;
 }
 
 div.col-1 {

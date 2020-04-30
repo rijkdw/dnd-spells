@@ -121,11 +121,6 @@ def spell_json_to_jinja(json_spell):
                     list_string += f'\n<li>{item}</li>'
                 list_string += '\n</ul>'
                 description.append(list_string)
-    if 'entriesHigherLevel' in list(json_spell.keys()):
-        higher_level_entries = json_spell['entriesHigherLevel'][0]['entries']
-        description.append(f'<br><b><i>At higher levels.</i></b>')
-        for higher_level_entry in higher_level_entries:
-            description.append(higher_level_entry)
 
     jinja_spell = {
         'name': json_spell['name'],
@@ -137,8 +132,14 @@ def spell_json_to_jinja(json_spell):
         'duration': duration.capitalize(),
         'classes': classes,
         'source': source,
-        'description': description
+        'description': description,
     }
+
+    if 'entriesHigherLevel' in list(json_spell.keys()):
+        jinja_spell['description_higher'] = []
+        higher_level_entries = json_spell['entriesHigherLevel'][0]['entries']
+        for higher_level_entry in higher_level_entries:
+            jinja_spell['description_higher'].append(higher_level_entry)
 
     return jinja_spell
 

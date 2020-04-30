@@ -36,8 +36,16 @@
     </ul>
 
     {% for line in spell.description %}
-        {{ line|safe }} <br>
+        <p>{{ line|safe }}</p>
     {% endfor %}
+
+    {% if spell.description_higher %}
+        <b>At higher levels:</b>
+        {% for line in spell.description_higher %}
+            <p>{{ line|safe }}</p> <br>
+        {% endfor %}
+
+    {% endif %}
 
 </div>
 
