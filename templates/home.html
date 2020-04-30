@@ -6,14 +6,39 @@
 
     <form action="" method="post" novalidate>
 
-        <p>
-            {{ form.query_area.label }}<br>
-            {{ form.query_area(size=32) }}
-        </p>
-        <p>
-<!--            {{ form.submit.label }}<br>-->
-            {{ form.submit() }}
-        </p>
+        <h3>{{ form.name_field.label }}</h3>
+        {{ form.name_field(size=32) }}
+
+        <br><br>
+
+        <h3>{{ form.level_checkbox.label }}</h3>
+        {% for ch in form.level_checkbox %}
+            {{ ch }}&nbsp;{{ ch.label }}&nbsp;&nbsp;&nbsp;
+            {# {% if loop.index % 3 == 0 %}<br>{% endif %} #}
+        {% endfor %}
+
+        <br><br>
+
+        <h3>{{ form.school_checkbox.label }}</h3>
+        {% for ch in form.school_checkbox %}
+            {{ ch }}&nbsp;{{ ch.label }}&nbsp;&nbsp;&nbsp;
+            {# {% if loop.index % 3 == 0 %}<br>{% endif %} #}
+        {% endfor %}
+
+        <br><br>
+
+        <h3>{{ form.class_checkbox.label }}</h3>
+        {% for ch in form.class_checkbox %}
+            {{ ch }}&nbsp;{{ ch.label }}&nbsp;&nbsp;&nbsp;
+            {# {% if loop.index % 3 == 0 %}<br>{% endif %} #}
+        {% endfor %}
+
+        <br><br>
+
+        {{ form.submit_button() }}
+
+        <br><br>
+
 
     </form>
 

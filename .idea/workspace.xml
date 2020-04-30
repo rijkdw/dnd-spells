@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04a6a6b5-d0ce-4a2c-96cd-e794f1e1f176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/spells_clean.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/json_inspector.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_inspector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style/mystyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/spell.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/spell.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,9 +38,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.webapp">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rijk\PycharmProjects\dnd-spells\templates" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.json_inspector">
     <configuration name="json_inspector" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="dnd-spells" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,8 +91,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.webapp" />
         <item itemvalue="Python.json_inspector" />
+        <item itemvalue="Python.webapp" />
       </list>
     </recent_temporary>
   </component>
@@ -112,29 +116,29 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1588097802952">
+    <state width="1899" height="263" key="GridCell.Tab.0.bottom" timestamp="1588266622990">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659095" />
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588097802952" />
+    <state width="1899" height="263" key="GridCell.Tab.0.bottom/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588266622990" />
     <state width="1899" height="285" key="GridCell.Tab.0.bottom/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588063542077" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1588097802952">
+    <state width="1899" height="263" key="GridCell.Tab.0.center" timestamp="1588266622989">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588097802952" />
+    <state width="1899" height="263" key="GridCell.Tab.0.center/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588266622989" />
     <state width="1899" height="285" key="GridCell.Tab.0.center/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588063542077" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1588097802952">
+    <state width="1899" height="263" key="GridCell.Tab.0.left" timestamp="1588266622989">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588097802952" />
+    <state width="1899" height="263" key="GridCell.Tab.0.left/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588266622989" />
     <state width="1899" height="285" key="GridCell.Tab.0.left/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588063542077" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1588097802952">
+    <state width="1899" height="263" key="GridCell.Tab.0.right" timestamp="1588266622990">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587926659094" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588097802952" />
+    <state width="1899" height="263" key="GridCell.Tab.0.right/1920.310.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588266622990" />
     <state width="1899" height="285" key="GridCell.Tab.0.right/1920.322.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1588063542077" />
     <state width="1899" height="352" key="GridCell.Tab.1.bottom" timestamp="1588017427202">
       <screen x="0" y="0" width="1920" height="1050" />
