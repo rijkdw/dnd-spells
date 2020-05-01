@@ -6,9 +6,11 @@ body {
 	background-size: 35em 35em;
 	background-attachment: fixed;
 	background-opacity: 1;
-    margin: 30px;
-    padding: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+results {
+    font-size: 2em;
     text-align: center;
 }
 
@@ -30,7 +32,49 @@ div.navibar {
     text-align: left;
 }
 
-div.col {
+/* navbar css (WIP)
+
+.active {
+    background-color: #4CAF50;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #050505;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #030303;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* end of navbar */
+
+div.col#spellblock {
     border: 5px solid white;
     border-radius: 4px;
     box-shadow: 0 2px 2px rgba(34, 25, 25, 0.4);
@@ -41,7 +85,21 @@ div.col {
     text-align: left;
 }
 
-div.col:hover {
+div.col#spellblock name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+div.col#spellblock subtitle {
+    font-style: italic;
+    font-size: 1em;
+}
+
+div.col#spellblock param {
+    font-size: 1em;
+}
+
+div.col#spellblock:hover {
     opacity: 1.0;
 }
 
