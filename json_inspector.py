@@ -16,10 +16,36 @@ dummy_spells = [{
         }]
 
 
+@timer
 def load_json_spells():
     return json.loads('\n'.join(open('files/spells.json', 'r+', encoding='utf-8').readlines())[1:])
 
 
+@timer
+def load_clean_json_spells():
+    return json.loads('\n'.join(open('files/spells_clean.json', 'r+', encoding='utf-8').readlines()))
+
+
+def get_spell_with_name(target_spell_name: str):
+    for spell in load_clean_json_spells():
+        if spell['name'].lower() == target_spell_name.lower():
+            return spell
+
+
+@timer
+def get_spells_with_names(target_spell_names: list):
+    spells_to_return = []
+    for spell in load_clean_json_spells():
+        if spell['name'] in target_spell_names:
+            spells_to_return.append(spell)
+    return spells_to_return
+
+    for spell_name in target_spell_names:
+        spells_to_return.append(get_spell_with_name(spell_name))
+    return spells_to_return
+
+
+@timer
 def spell_json_to_jinja(json_spell):
     inf = inflect.engine()
 
@@ -27,6 +53,10 @@ def spell_json_to_jinja(json_spell):
     time_unit = json_spell['time'][0]['unit']
     time_num = json_spell['time'][0]['number']
     time = f'{time_num} {inf.plural(time_unit, time_num)}'
+    ritual = 0
+    if 'meta' in list(json_spell.keys()):
+        ritual = 1
+        time += ' (ritual)'
 
     # range
     if 'special' in json_spell['range'].values():
@@ -58,17 +88,22 @@ def spell_json_to_jinja(json_spell):
 
     # duration
     durations = []
+    concentration = 0
     for duration_obj in json_spell['duration']:
         if duration_obj['type'] == 'instant':
-            durations.append('instantaneous')
+            duration_i = 'instantaneous'
         elif duration_obj['type'] == 'permanent':
-            durations.append('until dispelled')
+            duration_i = 'until dispelled'
         elif duration_obj['type'] == 'special':
-            durations.append('special')
+            duration_i = 'special'
         else:
             duration_num = duration_obj['duration']['amount']
             duration_unit = duration_obj['duration']['type']
-            durations.append(f'{duration_num} {inf.plural(duration_unit, duration_num)}')
+            duration_i = f'{duration_num} {inf.plural(duration_unit, duration_num)}'
+        if 'concentration' in list(duration_obj.keys()):
+            duration_i += ' (concentration)'
+            concentration = 1
+        durations.append(duration_i)
     duration = ' or '.join(durations).capitalize()
 
     # classes and subclasses
@@ -97,7 +132,7 @@ def spell_json_to_jinja(json_spell):
             if entry['type'] == 'entries':  # ex:  Alter Self
                 name = entry['name']
                 text = '\n'.join(entry['entries'])
-                description.append(f'<br><b><i>{name}.</i></b> {text}')
+                description.append(f'<b><i>{name}.</i></b> {text}')
             if entry['type'] == 'table':    # ex:  Animate Objects
                 table_string = '<table>\n'
                 # headers
@@ -126,6 +161,7 @@ def spell_json_to_jinja(json_spell):
         'name': json_spell['name'],
         'subtitle': subtitle,
         'level': level,
+        'school': school,
         'time': time.capitalize(),
         'range': s_range.capitalize(),
         'components': components,
@@ -133,6 +169,8 @@ def spell_json_to_jinja(json_spell):
         'classes': classes,
         'source': source,
         'description': description,
+        'ritual': ritual,
+        'concentration': concentration
     }
 
     if 'entriesHigherLevel' in list(json_spell.keys()):
@@ -144,10 +182,12 @@ def spell_json_to_jinja(json_spell):
     return jinja_spell
 
 
+@timer
 def all_spells_json_to_jinja():
     return [spell_json_to_jinja(s) for s in load_json_spells()]
 
 
+@timer
 def generate_clean_json():
     spells_list = [spell_json_to_jinja(s) for s in load_json_spells()]
     with open('files/spells_clean.json', 'w+') as file:

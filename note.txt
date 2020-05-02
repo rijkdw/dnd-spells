@@ -1,7 +1,30 @@
 ==========================================
-TODO:
+Execution flow
 ==========================================
-- Higher level entries
+
+1.  User searches for spells.
+    Things they can search for:
+        - name
+        - level
+        - school
+        - class
+        - components
+        - source
+        - ritual [y/n]
+        - concentration [y/n]
+
+2.  web-app receives search parameters upon form submission
+        ex: levels = [0,1,2]
+
+3.  web-app queries database for spell names fitting those  parameters
+        ex: SELECT name FROM spells WHERE level = 0 OR level = 1 OR level = 2
+
+4.  web-app gets json spells with those names from json file
+
+
+5.  web-app translates json spells to jinja spells
+
+
 
 ==========================================
 Spell card layout:
